@@ -8,6 +8,14 @@ img {
   vertical-align: bottom;
 }
 
+li {
+  list-style: none;
+}
+
+li > a {
+  text-decoration: none;
+}
+
 .content-width {
   width: 90%;
   margin: 0 auto;
