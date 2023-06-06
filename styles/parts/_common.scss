@@ -10,10 +10,12 @@ $base-color: #4c566a;
 $bg-button-hover: #2e3440;
 $bg-icon: #d8dee9;
 $icon: #5e81ac;
+$headerHeight: 100px;
 
 body {
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.75;
+  background: $light-color;
 }
 
 img {
@@ -39,6 +41,13 @@ li > a {
 
 .mb-sm {
   margin-bottom: 16px !important;
+}
+.mt-sm {
+  margin-top: 16px !important;
+}
+
+.mb-md {
+  margin-bottom: 30px !important;
 }
 
 .mb-lg {
@@ -67,7 +76,7 @@ li > a {
 
   @include mq(md) {
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   }
 }
 
@@ -101,4 +110,24 @@ li > a {
   @include mq(md) {
     font-size: 18px;
   }
+}
+
+// --------------------
+// wave img
+// --------------------
+.wave-bottom {
+  margin-top: -1px;
+}
+
+.wave-top {
+  margin-bottom: -1px;
+}
+
+// --------------------
+// title
+// --------------------
+.main-title {
+  @extend .header2;
+  @extend .mb-md;
+  text-align: center;
 }
