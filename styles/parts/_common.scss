@@ -1,0 +1,97 @@
+@use "../globals/" as *;
+
+// --------------------
+// background color
+// --------------------
+$bg-base: #ffffff;
+$light-color: #eceff4;
+$bg-dark: #2d3440;
+$base-color: #4c566a;
+$bg-button-hover: #2e3440;
+$bg-icon: #d8dee9;
+$icon: #5e81ac;
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.75;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+// --------------------
+// layout
+// --------------------
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+
+.mb-lg {
+  margin-bottom: 80px !important;
+
+  @include mq(md) {
+    margin-bottom: 160px !important;
+  }
+}
+
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+
+.pb-lg {
+  padding-bottom: 80px !important;
+
+  @include mq(md) {
+    padding-bottom: 160px !important;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+// --------------------
+// font size
+// --------------------
+.font-copy {
+  font-size: 30px;
+
+  @include mq(md) {
+    font-size: 38px;
+  }
+}
+.header2 {
+  font-size: 24px;
+
+  @include mq(md) {
+    font-size: 32px;
+  }
+}
+.header3 {
+  font-size: 18px;
+
+  @include mq(md) {
+    font-size: 22px;
+  }
+}
+.font-sm {
+  font-size: 16px;
+
+  @include mq(md) {
+    font-size: 18px;
+  }
+}
