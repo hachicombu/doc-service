@@ -20,6 +20,8 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
+  // 画像の下の隙間を消す
   vertical-align: bottom;
 }
 
@@ -88,10 +90,10 @@ li > a {
   }
 }
 .font-sm {
-  font-size: 16px;
+  font-size: 14px;
 
   @include mq(md) {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

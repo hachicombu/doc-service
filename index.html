@@ -16,9 +16,11 @@
       content="このサイトは勉強用のサンプルサイトです。"
     />
     <meta property="og:image" content="https://xxxxxxx.com/images/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
 
     <title>.doc</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/webclip.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,7 +54,9 @@
             <img src="images/top-kv-illustration.svg" alt="top-kv" />
           </div>
           <div class="hero__texts">
-            <h1 class="hero__title">さくっと、パス付き資料の作成&共有</h1>
+            <h1 class="hero__title">
+              <span>さくっと、</span><span>パス付き資料の作成&共有</span>
+            </h1>
             <ul class="hero__ul">
               <li class="hero__li">ストレスなくサクサク書ける</li>
               <li class="hero__li">ドキュメントはパス付きで共有可能</li>
@@ -173,7 +177,10 @@
             <li class="footer__li"><a href="">トップ</a></li>
             <li class="footer__li"><a href="">利用規約</a></li>
             <li class="footer__li"><a href="">プライバシーポリシー</a></li>
-            <li class="footer__li"><a href="">運営会社</a></li>
+            <li class="footer__li">
+              <!-- rel: 脆弱性対策 -->
+              <a href="" target="_blank" rel="noreferrer noopener">運営会社</a>
+            </li>
           </ul>
           <div class="footer__copyright">
             <p>&copy; dot-doc inc.</p>

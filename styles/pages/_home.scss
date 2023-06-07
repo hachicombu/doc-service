@@ -3,17 +3,20 @@
 
 .btn {
   @extend .font-sm;
-  display: inline-block;
+  // 上下左右中央寄せ
+  display: inline-flex;
+  justify-content: center;
   text-align: center;
+  line-height: 1;
   font-weight: 600;
   color: $light-color;
   background-color: $base-color;
   border: none;
-  border-radius: 11px;
-  padding: 12px 30px;
-  cursor: pointer;
-  transition: all 0.3s;
+  border-radius: 8px;
+  padding: 15px 16px;
   letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: $bg-button-hover;
@@ -78,6 +81,13 @@
   &__title {
     @extend .font-copy;
     @extend .mb-sm;
+
+    @include mq(md) {
+      // PC時は改行
+      & span {
+        display: block;
+      }
+    }
   }
 
   &__ul {
@@ -98,14 +108,33 @@
   &__btn {
     margin: 20px 0 30px 0;
     position: relative;
-    padding: 12px 60px;
+    padding: 20px 40px;
 
-    &::after {
-      font-family: "Material Icons";
-      content: "\e5c8";
+    // 矢印
+    &::after,
+    &::before {
+      content: "";
       position: absolute;
-      top: 25%;
-      right: 5%;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+      margin: auto;
+    }
+
+    // 矢印（横棒）
+    &::before {
+      width: 14px;
+      height: 2px;
+      background-color: $light-color;
+    }
+
+    // 矢印（右方向の先のやつ）
+    &::after {
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid $light-color;
+      border-right: 2px solid $light-color;
+      transform: rotate(45deg);
     }
   }
 }
