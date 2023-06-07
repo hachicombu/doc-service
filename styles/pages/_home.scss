@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   z-index: 100;
+  background-color: $light-color;
 
   &__inner {
     @extend .content-width;
@@ -21,6 +22,7 @@
 .hero {
   // header分の高さを追加（fixed対策）
   margin-top: $headerHeight;
+  background-color: $light-color;
 
   &__inner {
     @extend .content-width;
@@ -90,13 +92,17 @@
     @extend .content-width;
     @extend .flex;
     align-items: center;
+    gap: 2.3em;
+
+    @include mq(md) {
+      gap: 3em;
+    }
   }
 
   &__item {
     text-align: center;
     display: flex;
     flex-direction: column;
-    @extend .mb-md;
   }
 
   &__img {
@@ -116,6 +122,7 @@
   }
 
   &__text {
+    @extend .font-sm;
   }
 }
 
@@ -127,20 +134,75 @@
     @extend .content-width;
     display: flex;
     flex-direction: column;
+    gap: 2.3em;
+
+    @include mq(md) {
+      gap: 3em;
+    }
   }
 
   &__item {
+    @extend .flex;
+    gap: 2.3em;
+
+    @include mq(md) {
+      gap: 6em;
+    }
   }
 
   &__img {
+    @include mq(md) {
+      width: 75%;
+    }
   }
 
   &_texts {
   }
 
   &__title {
+    @extend .header3;
+    @extend .mb-sm;
   }
 
   &__text {
+    @extend .font-sm;
+  }
+}
+
+.footer {
+  &__inner {
+    @extend .flex;
+    @extend .content-width;
+    align-items: center;
+    text-align: center;
+
+    @include mq(md) {
+      justify-content: space-between;
+    }
+  }
+
+  &__ul {
+    @extend .mb-sm;
+    padding-left: 0;
+    @extend .flex;
+  }
+  &__li {
+    @extend .mb-sm;
+    & > a {
+      color: $base-color;
+    }
+
+    @include mq(md) {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i})::after {
+          content: "/";
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+  &__copyright {
+    color: $base-color;
+    @extend .mb-sm;
   }
 }

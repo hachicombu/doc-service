@@ -1,7 +1,7 @@
 body {
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.75;
-  background: #eceff4;
+  background: #ffffff;
 }
 
 img {
@@ -17,13 +17,13 @@ li > a {
   text-decoration: none;
 }
 
-.content-width, .header__inner, .hero__inner, .feature__inner, .function__inner {
+.content-width, .header__inner, .hero__inner, .feature__inner, .function__inner, .footer__inner {
   width: 90%;
   margin: 0 auto;
   max-width: 1080px;
 }
 
-.mb-sm, .hero__img, .hero__texts, .hero__title, .hero__ul, .feature__title {
+.mb-sm, .hero__img, .hero__texts, .hero__title, .hero__ul, .feature__title, .function__title, .footer__ul, .footer__li, .footer__copyright {
   margin-bottom: 16px !important;
 }
 
@@ -31,8 +31,8 @@ li > a {
   margin-top: 16px !important;
 }
 
-.mb-md, .feature__item, .feature__img, .main-title {
-  margin-bottom: 30px !important;
+.mb-md, .feature__img, .main-title {
+  margin-bottom: 32px !important;
 }
 
 .mb-lg {
@@ -57,13 +57,19 @@ li > a {
   }
 }
 
-.flex, .hero__inner, .feature__inner {
+.flex, .hero__inner, .feature__inner, .function__item, .footer__inner, .footer__ul {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .flex, .hero__inner, .feature__inner {
+  .flex, .hero__inner, .feature__inner, .function__item, .footer__inner, .footer__ul {
     flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item-reverse {
+    flex-direction: row-reverse;
   }
 }
 
@@ -85,20 +91,20 @@ li > a {
   }
 }
 
-.header3, .hero__ul, .feature__title {
+.header3, .hero__ul, .feature__title, .function__title {
   font-size: 18px;
 }
 @media screen and (min-width: 768px) {
-  .header3, .hero__ul, .feature__title {
+  .header3, .hero__ul, .feature__title, .function__title {
     font-size: 22px;
   }
 }
 
-.font-sm, .btn {
+.font-sm, .feature__text, .function__text, .btn {
   font-size: 16px;
 }
 @media screen and (min-width: 768px) {
-  .font-sm, .btn {
+  .font-sm, .feature__text, .function__text, .btn {
     font-size: 18px;
   }
 }
@@ -139,6 +145,7 @@ li > a {
   top: 0;
   left: 0;
   z-index: 100;
+  background-color: #eceff4;
 }
 .header__inner {
   display: flex;
@@ -148,6 +155,7 @@ li > a {
 
 .hero {
   margin-top: 100px;
+  background-color: #eceff4;
 }
 @media screen and (min-width: 768px) {
   .hero__inner {
@@ -196,6 +204,12 @@ li > a {
 }
 .feature__inner {
   align-items: center;
+  gap: 2.3em;
+}
+@media screen and (min-width: 768px) {
+  .feature__inner {
+    gap: 3em;
+  }
 }
 .feature__item {
   text-align: center;
@@ -213,4 +227,55 @@ li > a {
 .function__inner {
   display: flex;
   flex-direction: column;
+  gap: 2.3em;
+}
+@media screen and (min-width: 768px) {
+  .function__inner {
+    gap: 3em;
+  }
+}
+.function__item {
+  gap: 2.3em;
+}
+@media screen and (min-width: 768px) {
+  .function__item {
+    gap: 6em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .function__img {
+    width: 75%;
+  }
+}
+.footer__inner {
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__inner {
+    justify-content: space-between;
+  }
+}
+.footer__ul {
+  padding-left: 0;
+}
+.footer__li > a {
+  color: #4c566a;
+}
+@media screen and (min-width: 768px) {
+  .footer__li:nth-child(1)::after {
+    content: "/";
+    margin: 0 6px;
+  }
+  .footer__li:nth-child(2)::after {
+    content: "/";
+    margin: 0 6px;
+  }
+  .footer__li:nth-child(3)::after {
+    content: "/";
+    margin: 0 6px;
+  }
+}
+.footer__copyright {
+  color: #4c566a;
 }/*# sourceMappingURL=style.css.map */
