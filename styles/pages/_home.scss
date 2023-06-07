@@ -1,6 +1,25 @@
 @use "../globals" as *;
 @use "../parts/common" as *;
 
+.btn {
+  @extend .font-sm;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  color: $light-color;
+  background-color: $base-color;
+  border: none;
+  border-radius: 11px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.16em;
+
+  &:hover {
+    background-color: $bg-button-hover;
+  }
+}
+
 .header {
   width: 100%;
   height: $headerHeight;
@@ -8,11 +27,17 @@
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: $light-color;
+  // scroll animation用
+  transition: all 0.7s;
+  background-color: transparent;
+
+  &.inview {
+    background-color: rgba($color: $light-color, $alpha: 0.8);
+  }
 
   &__inner {
     @extend .content-width;
-    @extend .mt-sm;
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,20 +46,18 @@
 
 .hero {
   // header分の高さを追加（fixed対策）
-  margin-top: $headerHeight;
+  padding-top: $headerHeight;
   background-color: $light-color;
 
   &__inner {
     @extend .content-width;
     @extend .flex;
-    @include mq(md) {
-      flex-direction: row-reverse;
-    }
+    @extend .item-reverse;
   }
 
   &__img {
-    margin: 20px auto;
     @extend .mb-sm;
+    margin: 50px auto;
 
     & > img {
       width: 80%;
@@ -47,8 +70,9 @@
   }
 
   &__texts {
-    color: $base-color;
     @extend .mb-sm;
+    margin-top: 50px;
+    color: $base-color;
   }
 
   &__title {
@@ -92,7 +116,7 @@
     @extend .content-width;
     @extend .flex;
     align-items: center;
-    gap: 2.3em;
+    gap: 3em;
 
     @include mq(md) {
       gap: 3em;
@@ -113,16 +137,8 @@
     }
   }
 
-  &__texts {
-  }
-
-  &__title {
-    @extend .mb-sm;
-    @extend .header3;
-  }
-
   &__text {
-    @extend .font-sm;
+    @extend .content-text;
   }
 }
 
@@ -134,10 +150,10 @@
     @extend .content-width;
     display: flex;
     flex-direction: column;
-    gap: 2.3em;
+    gap: 5em;
 
     @include mq(md) {
-      gap: 3em;
+      gap: 7em;
     }
   }
 
@@ -148,24 +164,20 @@
     @include mq(md) {
       gap: 6em;
     }
+
+    &:nth-child(2) {
+      @extend .item-reverse;
+    }
   }
 
   &__img {
     @include mq(md) {
-      width: 75%;
+      width: 80%;
     }
   }
 
-  &_texts {
-  }
-
-  &__title {
-    @extend .header3;
-    @extend .mb-sm;
-  }
-
   &__text {
-    @extend .font-sm;
+    @extend .content-text;
   }
 }
 
@@ -175,6 +187,7 @@
     @extend .content-width;
     align-items: center;
     text-align: center;
+    margin-top: 45px;
 
     @include mq(md) {
       justify-content: space-between;
@@ -182,9 +195,9 @@
   }
 
   &__ul {
-    @extend .mb-sm;
-    padding-left: 0;
     @extend .flex;
+    @extend .mb-md;
+    padding-left: 0;
   }
   &__li {
     @extend .mb-sm;
@@ -193,6 +206,7 @@
     }
 
     @include mq(md) {
+      margin-bottom: 0 !important;
       @for $i from 1 through 3 {
         &:nth-child(#{$i})::after {
           content: "/";
@@ -202,7 +216,7 @@
     }
   }
   &__copyright {
+    @extend .mb-md;
     color: $base-color;
-    @extend .mb-sm;
   }
 }

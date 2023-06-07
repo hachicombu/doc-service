@@ -1,7 +1,7 @@
 @use "../globals/" as *;
 
 // --------------------
-// background color
+// variations
 // --------------------
 $bg-base: #ffffff;
 $light-color: #eceff4;
@@ -26,6 +26,7 @@ img {
 li {
   list-style: none;
 }
+
 li > a {
   text-decoration: none;
 }
@@ -42,32 +43,9 @@ li > a {
 .mb-sm {
   margin-bottom: 16px !important;
 }
-.mt-sm {
-  margin-top: 16px !important;
-}
 
 .mb-md {
   margin-bottom: 32px !important;
-}
-
-.mb-lg {
-  margin-bottom: 80px !important;
-
-  @include mq(md) {
-    margin-bottom: 160px !important;
-  }
-}
-
-.pb-sm {
-  padding-bottom: 16px !important;
-}
-
-.pb-lg {
-  padding-bottom: 80px !important;
-
-  @include mq(md) {
-    padding-bottom: 160px !important;
-  }
 }
 
 .flex {
@@ -76,7 +54,6 @@ li > a {
 
   @include mq(md) {
     flex-direction: row;
-    // flex-wrap: wrap;
   }
 }
 
@@ -130,10 +107,19 @@ li > a {
 }
 
 // --------------------
-// title
+// title & text
 // --------------------
 .main-title {
   @extend .header2;
   @extend .mb-md;
   text-align: center;
+}
+
+.sub-title {
+  @extend .mb-sm;
+  @extend .header3;
+}
+
+.content-text {
+  @extend .font-sm;
 }
