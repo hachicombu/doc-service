@@ -154,6 +154,7 @@ li > a {
 }
 .hero__ul {
   line-height: 2.3;
+  padding-left: 0;
 }
 .hero__li::before {
   font-family: "Material Icons";
@@ -161,7 +162,7 @@ li > a {
   margin-right: 4px;
 }
 .hero__btn {
-  margin: 2.5em;
+  margin: 20px 0 30px 0;
   position: relative;
   padding: 12px 60px;
 }
